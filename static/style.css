@@ -1,0 +1,85 @@
+/* ---------- global ---------- */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',sans-serif}
+
+/* animated blue-white gradient */
+.bg{
+  position:fixed;inset:0;
+  background:linear-gradient(120deg,#e0f4ff 0%,#7abaff 50%,#006aff 100%);
+  background-size:200% 200%;
+  animation:moveBg 15s ease-in-out infinite;
+  z-index:-2;
+}
+@keyframes moveBg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* glass card */
+.card{
+  max-width:900px;
+  margin:40px auto;
+  padding:40px 28px 48px;
+  background:rgba(255,255,255,0.20);
+  backdrop-filter:blur(18px);
+  border-radius:20px;
+  color:#002050;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+}
+
+/* headings */
+h1{
+  margin:0 0 24px;
+  font-weight:600;
+  font-size:clamp(1.8rem,5vw,2.6rem);
+  text-align:center;
+  color:#ffffff;
+  text-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+
+/* selector row */
+.selectors{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  align-items:flex-end;
+  margin-bottom:28px;
+}
+label{
+  display:flex;
+  flex-direction:column;
+  font-weight:600;
+  color:#ffffff;
+}
+select,button{
+  font-size:16px;
+  padding:10px 14px;
+  border:none;
+  border-radius:8px;
+  outline:0;
+}
+select{
+  background:#ffffff;
+  color:#002050;
+}
+button{
+  background:#006aff;
+  color:#fff;
+  cursor:pointer;
+  transition:background .25s;
+}
+button:hover{background:#0050d9}
+
+/* chart canvas */
+canvas{
+  width:100%!important;
+  height:480px!important;
+}
+
+/* accessible focus */
+select:focus,button:focus{
+  box-shadow:0 0 0 3px rgba(0,106,255,.45);
+}
+
